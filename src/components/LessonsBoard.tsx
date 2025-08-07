@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react'
 import { CloseIcon } from '@chakra-ui/icons'
 import axios from 'axios'
+import { BASE_API_URL } from './api'
 
 interface Lesson {
   id: number
@@ -28,7 +29,7 @@ const LessonsBoard = () => {
   const fetchLessons = async () => {
     setLoading(true)
     try {
-      const res = await axios.get('http://localhost:3000/lessons')
+      const res = await axios.get(`${BASE_API_URL}/lessons`)
       if (res.data.success) {
         setLessons(res.data.data)
       }

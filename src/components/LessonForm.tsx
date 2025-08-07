@@ -12,6 +12,7 @@ import {
   Container,
 } from '@chakra-ui/react'
 import axios from 'axios'
+import { BASE_API_URL } from './api' 
 
 const LessonForm = () => {
   const toast = useToast()
@@ -31,7 +32,7 @@ const LessonForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const res = await axios.post('http://localhost:3000/lessons', form)
+      const res = await axios.post(`${BASE_API_URL}/lessons`, form)
 
       if (res.data.success) {
         toast({ title: 'Submission received!', status: 'success' })
