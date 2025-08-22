@@ -1,8 +1,10 @@
-import LessonForm from './components/LessonForm'
-import LessonsBoard from './components/LessonsBoard'
-import { Box } from '@chakra-ui/react'
+import LessonForm from "./components/LessonForm";
+import LessonsBoard from "./components/LessonsBoard";
+import { Box } from "@chakra-ui/react";
+import useWakeUpLessonsBackend from "./components/useWakeUpLessonsBackend";
 
 function App() {
+  useWakeUpLessonsBackend();
   return (
     <Box
       minH="100vh"
@@ -18,7 +20,7 @@ function App() {
       <LessonForm />
       <LessonsBoard />
     </Box>
-  )
+  );
 }
 
-export default App
+export default App;
